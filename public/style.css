@@ -1,0 +1,60 @@
+body {
+    background-color: #DCDFE4;
+}
+
+h2 {
+    color: #332F20;
+}
+
+a:link, a:hover, a:visited {
+    color: inherit;
+    text-decoration: none;
+}
+
+.colored-highlight {
+    color: #F9C10A !important;
+    font-weight: 500;
+}
+
+.money-amount {
+    color: green;
+    font-weight: 800;
+}
+
+.card {
+    flex: 0 0 auto; /* Prevent cards from shrinking or growing */
+    width: 18rem;  /* Adjust the width of cards */
+}
+
+
+.card-deck-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+    padding: 1rem;
+    margin-bottom: 15px;
+  }
+
+.navbar-custom {
+    background-color: #070707;
+}
+.navbar-brand img {
+    border-radius: 50%;
+}
+/* change the brand and text color */
+.navbar-custom .navbar-brand {
+    color: #F9C10A !important;
+    line-height: 75px;
+    font-size: x-large;
+    text-transform: uppercase;
+}
+.navbar-custom .navbar-brand .bet {
+    font-weight: 100;
+}
+.navbar-custom .navbar-brand .mgm {
+    font-weight: 800;
+}
+/* change the link color */
+.navbar-custom .navbar-nav .nav-link {
+    color: #F9C10A;
+}

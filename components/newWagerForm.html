@@ -1,0 +1,82 @@
+<div class="container">
+    <form method="post">
+        <h2 class="mt-4">Bet: <?php echo $bet['title']; ?></h2>
+        <h5>
+            <?php echo $bet['description']; ?>
+        </h5>
+        <h5>
+            <?php
+            if (!empty($bet['closes'])) {
+                $timeDifference = strtotime($bet['closes']) - time();
+                // If there is still time left, calculate days, hours, minutes, seconds
+                $days = floor($timeDifference / (60 * 60 * 24));
+                $hours = floor(($timeDifference % (60 * 60 * 24)) / (60 * 60));
+                $minutes = floor(($timeDifference % (60 * 60)) / 60);
+        
+                // Format the remaining time in a human-readable way
+                echo 'Closes in ' . sprintf("%02d days %02d:%02d", $days, $hours, $minutes);
+            }
+            ?>
+        </h5>
+        <hr />
+        <h2>Place Wager</h2>
+
+        <?php if ($bet['type'] == "Over/Under"): ?>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="selection" id="exampleRadios1" value="a" <?php if ($_GET['choice'] == 'a') { echo 'checked'; } ?>>
+            <label class="form-check-label" for="exampleRadios1">
+                <?php echo $bet['a_title']; ?> for
+                <?php echo $bet['a_odds']; ?>
+            </label>
+        </div>
+        <div class="form-check mb-4">
+            <input class="form-check-input" type="radio" name="selection" id="exampleRadios2" value="b" <?php if ($_GET['choice'] == 'b') { echo 'checked'; } ?>>
+            <label class="form-check-label" for="exampleRadios2">
+                <?php echo $bet['b_title']; ?> for
+                <?php echo $bet['b_odds']; ?>
+            </label>
+        </div>
+        <?php elseif ($bet['type'] == "Quick Pick"): ?>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="selection" id="exampleRadios1" value="a" <?php if ($_GET['choice'] == 'a') { echo 'checked'; } ?>>
+            <label class="form-check-label" for="exampleRadios1">
+                <?php echo $bet['a_title']; ?> for
+                <?php echo $bet['a_odds']; ?>
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="selection" id="exampleRadios2" value="b" <?php if ($_GET['choice'] == 'b') { echo 'checked'; } ?>>
+            <label class="form-check-label" for="exampleRadios2">
+                <?php echo $bet['b_title']; ?> for
+                <?php echo $bet['b_odds']; ?>
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="selection" id="exampleRadios3" value="c" <?php if ($_GET['choice'] == 'c') { echo 'checked'; } ?>>
+            <label class="form-check-label" for="exampleRadios3">
+                <?php echo $bet['c_title']; ?> for
+                <?php echo $bet['c_odds']; ?>
+            </label>
+        </div>
+        <div class="form-check mb-3">
+            <input class="form-check-input" type="radio" name="selection" id="exampleRadios4" value="d" <?php if ($_GET['choice'] == 'd') { echo 'checked'; } ?>>
+            <label class="form-check-label" for="exampleRadios4">
+                <?php echo $bet['d_title']; ?> for
+                <?php echo $bet['d_odds']; ?>
+            </label>
+        </div>
+        <?php endif; ?>
+        <div class="form-group">
+            <label for="amount">Wager Value:</label>
+            <input type="number" class="form-control" id="amount" placeholder="50₡" name="amount" min="0" step="1" max="<?php echo $maxBet; ?>">
+            <small id="amount" class="form-text text-muted">
+                You can wager up to <?php echo $maxBet; ?>₡
+            </small>
+            <small id="payout" class="form-text text-muted"></small>
+        </div>
+        <input type="hidden" name="submit" value="create">
+        <input type="hidden" name="bet_id" value="<?php echo $bet['id']; ?>">
+        <button type="submit" class="btn btn-success mt-3">Place Wager</button>
+        <button onclick="window.close();" class="btn btn-outline-secondary mt-3">Cancel</button>
+    </form>
+</div>

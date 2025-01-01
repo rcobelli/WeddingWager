@@ -1,0 +1,72 @@
+<div class="container">
+    <form method="post">
+        <h2 class="mt-4">New Bet</h2>
+        <div class="form-group">
+            <label for="input1">Title</label>
+            <input name="title" type="text" class="form-control" id="input1" placeholder="Beers Consumed" required>
+        </div>
+        <div class="form-group">
+            <label for="input2">Description</label>
+            <input name="description" type="text" class="form-control" id="input2" placeholder="Line: 500.5">
+        </div>
+        <div class="form-group">
+            <label for="input3">Closing</label>
+            <input type="time" class="form-control" id="input3" name="closing" placeholder="08:00 PM">
+        </div>
+        <div class="form-group">
+            <label for="input4">Type</label>
+            <select class="form-control" id="input4" name="type">
+                <option>Quick Pick</option>
+                <option>Over/Under</option>
+                <option>Hit (Yes/No)</option>
+            </select>
+        </div>
+        <div class="form-group" id="a_group">
+            <label id="a_label">Option A</label>
+            <div class="row">
+                <div class="col" id="over_title">
+                    <input type="text" class="form-control" placeholder="Green" name="a_title">
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="+250" name="a_odds" pattern="[\-\+]\d+" title="+ or -; followed by a whole number">
+                </div>
+            </div>
+        </div>
+        <div class="form-group" id="b_group">
+            <label id="b_label">Option B</label>
+            <div class="row">
+                <div class="col" id="under_title">
+                    <input type="text" class="form-control" placeholder="Red" name="b_title">
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="+250" name="b_odds" pattern="[\-\+]\d+" title="+ or -; followed by a whole number">
+                </div>
+            </div>
+        </div>
+        <div class="form-group" id="c_group">
+            <label id="c_label">Option C</label>
+            <div class="row">
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="Yellow" name="c_title">
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="+250" name="c_odds" pattern="[\-\+]\d+" title="+ or -; followed by a whole number">
+                </div>
+            </div>
+        </div>
+        <div class="form-group" id="d_group">
+            <label id="d_label">Option D</label>
+            <div class="row">
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="White" name="d_title">
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="+250" name="d_odds" pattern="[\-\+]\d+" title="+ or -; followed by a whole number">
+                </div>
+            </div>
+        </div>
+        <input type="hidden" name="submit" value="create">
+        <button type="submit" class="btn btn-primary mt-3">Submit</button>
+    </form>
+</div>
+<script type="text/javascript" src="helper.js"></script>
