@@ -36,7 +36,7 @@ foreach ($users as $user) {
     echo "<tr>";
       echo "<th scope='row'>" . $count . "</th>";
       echo "<td>" . $user['name'] . "</td>";
-      echo "<td>" . number_format($user['balance'], 2) . " ₡</td>";
+      echo "<td>₡" . number_format($user['balance'], 2) . " </td>";
       if ($user['id'] == $_SESSION['id']) {
         echo "<td><span class='badge badge-secondary'>You</span></td>";
       } else {

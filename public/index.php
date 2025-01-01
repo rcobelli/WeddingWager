@@ -22,7 +22,8 @@ $userHelper = new UserHelper($config);
 
 ?>
 <div class="alert alert-success" role="alert">
-<?php echo $_SESSION['username'] ?>, your available balance is <span class="money-amount"><?php echo number_format($userHelper->getBalanceForUser($_SESSION['id']), 2); ?>₡</span>
+<p><?php echo $_SESSION['username'] ?>, your available balance is <span class="money-amount">₡<?php echo number_format($userHelper->getBalanceForUser($_SESSION['id']), 2); ?></span></p>
+<p><i>(₡ = CobelliCoin, a fake crypto for <s>Ryan to get rich quick</s> this event)</i></p>
 </div>
 <a class="btn btn-warning btn-lg btn-block mb-4" href="leaderboard.php" role="button">Check Out The Leaderboard!</a>
 
@@ -123,11 +124,11 @@ if (count($wagers) == 0) {
             echo '<div class="card-body pb-1">';
                 echo '<h5 class="card-title">' . $wager['title'] . '</h5>';
                 echo '<h6 class="card-subtitle mb-2 text-muted">' . $wager['type'] . '</h6>';
-                echo '<p class="lead">' . $wager['amount'] . '₡ on ' . $wager['selection'] . ' at ' . $wager['odds'] . ' odds</p>';
+                echo '<p class="lead">₡' . $wager['amount'] . ' on ' . $wager['selection'] . ' at ' . $wager['odds'] . ' odds</p>';
             echo '</div>';
             echo '<div class="card-footer text-muted">';
                 echo "<p>Placed at: " . date('h:m a', strtotime($wager['timestamp'])) . '</p>';
-                echo "<p>Potential Payout: " . number_format($betHelper->calculatePayout($wager['odds'], $wager['amount']), 2) . '₡</p>';
+                echo "<p>Potential Payout: ₡" . number_format($betHelper->calculatePayout($wager['odds'], $wager['amount']), 2) . '</p>';
             echo '</div>';
         echo '</div>';
     }
@@ -144,11 +145,11 @@ foreach ($wagers as $wager) {
         echo '<div class="card-body pb-1">';
             echo '<h5 class="card-title">' . $wager['title'] . '</h5>';
             echo '<h6 class="card-subtitle mb-2 text-muted">' . $wager['type'] . '</h6>';
-            echo '<p class="lead">' . $wager['amount'] . '₡ on ' . $wager['selection'] . ' at ' . $wager['odds'] . ' odds</p>';
+            echo '<p class="lead">₡' . $wager['amount'] . ' on ' . $wager['selection'] . ' at ' . $wager['odds'] . ' odds</p>';
             echo '<p class="badge badge-success d-block">WINNER</p>';
         echo '</div>';
         echo '<div class="card-footer text-muted">';
-            echo "<p>Paid: " . number_format($betHelper->calculatePayout($wager['odds'], $wager['amount']), 2) . '₡</p>';
+            echo "<p>Paid: ₡" . number_format($betHelper->calculatePayout($wager['odds'], $wager['amount']), 2) . '</p>';
         echo '</div>';
     echo '</div>';
 }
@@ -160,7 +161,7 @@ foreach ($wagers as $wager) {
         echo '<div class="card-body pb-1">';
             echo '<h5 class="card-title">' . $wager['title'] . '</h5>';
             echo '<h6 class="card-subtitle mb-2 text-muted">' . $wager['type'] . '</h6>';
-            echo '<p class="lead">' . $wager['amount'] . '₡ on ' . $wager['selection'] . ' at ' . $wager['odds'] . ' odds</p>';
+            echo '<p class="lead">₡' . $wager['amount'] . ' on ' . $wager['selection'] . ' at ' . $wager['odds'] . ' odds</p>';
             echo '<p class="badge badge-danger d-block">LOSER</p>';
         echo '</div>';
     echo '</div>';
@@ -173,11 +174,11 @@ foreach ($wagers as $wager) {
         echo '<div class="card-body pb-1">';
             echo '<h5 class="card-title">' . $wager['title'] . '</h5>';
             echo '<h6 class="card-subtitle mb-2 text-muted">' . $wager['type'] . '</h6>';
-            echo '<p class="lead">' . $wager['amount'] . '₡ on ' . $wager['selection'] . ' at ' . $wager['odds'] . ' odds</p>';
+            echo '<p class="lead">₡' . $wager['amount'] . ' on ' . $wager['selection'] . ' at ' . $wager['odds'] . ' odds</p>';
             echo '<p class="badge badge-warning d-block">VOIDED</p>';
         echo '</div>';
         echo '<div class="card-footer text-muted">';
-            echo "<p>Refunded: " . $wager['amount'] . '₡</p>';
+            echo "<p>Refunded: ₡" . $wager['amount'] . '</p>';
         echo '</div>';
     echo '</div>';
 }

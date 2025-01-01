@@ -43,7 +43,7 @@ $year = date('Y');
     <h2>Start Playing!</h2>
     <div class="form-group">
         <label for="input1">Name for Leaderboard:</label>
-        <input name="username" type="text" class="form-control" id="input1" placeholder="Hannah Bannah" value="<?php echo $_GET['username']; ?>" required>
+        <input name="username" type="text" class="form-control" id="input1" placeholder="Hannah Bannah" value="<?php echo $_GET['username']; ?>" required  autocomplete="off">
         <small id="help1" class="form-text text-muted">If you've been logged out, enter the same name as before to pick up where you left off</small>
     </div>
     
@@ -58,35 +58,10 @@ $year = date('Y');
     }
     ?>
 </form>
-<script>
-function validateUsername() {
-    var apiURL = "http://10.0.0.23:8004/checkUsername.php?username=" + document.getElementById('input1').value;
-    fetch(apiURL)
-    .then(response => {
-        document.getElementById('input1').disabled = true;
-        document.getElementById("submitButton").classList.remove("btn-dark");
-        document.getElementById('validateButton').style.display = 'none';
-
-        if (response.status == 202) {
-            document.getElementById('submitButton').style.display = 'block';
-            document.getElementById("submitButton").classList.add("btn-success");
-        } else if (response.status == 208) {
-            document.getElementById('submitButton').style.display = 'block';
-            document.getElementById("submitButton").classList.add("btn-danger");
-            document.getElementById('inUseWarning').style.display = 'block';
-        } else {
-            console.error('Unexpected response: ', response);
-        }
-    })
-    .catch(error => {
-        console.error('Error:', error);
-    });
-}
-</script>
 <hr/>
 <figure class="figure">
-    <figcaption class="figure-caption">DALL-E 3's interpretation of '<i>Cobelli Wedding Sports book logo</i>'</figcaption>
     <img src="resources/logo.jpg" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+    <figcaption class="figure-caption">DALL-E 3's interpretation of '<i>Cobelli Wedding Sports book logo</i>'</figcaption>
 </figure>
 <?php
 $content = ob_get_clean();
