@@ -48,7 +48,7 @@ $year = date('Y');
     </div>
     
     <?php
-    if (!isset($_GET['username'])) {
+    if (!isset($_GET['leaderboardName'])) {
         echo '<button type="submit" class="btn btn-dark mt-3" id="submitButton">Validate</button>';
     } else {
         echo "<p>This username already exists! If this wasn't you, please <u><a href='?'>refresh</a></u> the page and try a different username.</p>";
