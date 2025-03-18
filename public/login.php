@@ -54,7 +54,7 @@ $year = date('Y');
         echo "<p>This username already exists! If this wasn't you, please <u><a href='?'>refresh</a></u> the page and try a different username.</p>";
         echo '<input type="hidden" name="confirmed" value="true"/>';
         echo '<input type="hidden" name="test" value="false"/>';
-        echo '<button type="submit" class="btn btn-danger" id="submitButton">Submit</button>';
+        echo '<button type="submit" class="btn btn-dark" id="submitButton">This Was Me</button>';
     }
     ?>
 </form>
