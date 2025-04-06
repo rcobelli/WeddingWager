@@ -43,7 +43,7 @@ $year = date('Y');
     <h2>Start Playing!</h2>
     <div class="form-group">
         <label for="input1">Name for Leaderboard:</label>
-        <input name="leaderboardName" type="text" class="form-control" id="input1" placeholder="Hannah Bannah" value="<?php echo $_GET['leaderboardName']; ?>" required  autocomplete="off">
+        <input name="leaderboardName" type="text" class="form-control" id="input1" placeholder="Hannah Banana" value="<?php echo $_GET['leaderboardName']; ?>" required>
         <small id="help1" class="form-text text-muted">If you've been logged out, enter the same name as before to pick up where you left off</small>
     </div>
     

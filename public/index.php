@@ -28,10 +28,6 @@ $userHelper = new UserHelper($config);
 <div class="alert alert-info" role="alert">
 <p>A <b>-135</b> favorite means you must risk ₡135 to gain ₡100</p>
 <p>A <b>+350</b> underdog means you risk only ₡100, but you gain ₡350</p>
-<hr/>
-<p><b>Over/Under:</b> Guess if the actual answer is above or below the given line</p>
-<p><b>Hit (Yes/No):</b> Only place this wager if you think the event will happen</p>
-<p><b>Quick Pick:</b> Guess which answer will be correct</p>
 </div>
 <a class="btn btn-warning btn-lg btn-block mb-4" href="leaderboard.php" role="button">Check Out The Leaderboard!</a>
 
@@ -89,6 +85,13 @@ if (count($availableBets) == 0) {
             echo '<div class="card-body pb-1">';
                 echo '<h5 class="card-title">' . $bet['title'] . '</h5>';
                 echo '<h6 class="card-subtitle mb-2 text-muted">' . $bet['type'] . '</h6>';
+                if ($bet['type'] == 'Over/Under') {
+                    echo '<h6 class="card-subtitle mb-2 text-muted"><b>Over/Under:</b> Guess if the actual answer is above or below the given line</h6>';
+                } else if ($bet['type'] == 'Hit (Yes/No)') {
+                    echo '<h6 class="card-subtitle mb-2 text-muted"><b>Hit (Yes/No):</b> Only place this wager if you think the event will happen</h6>';
+                } else {
+                    echo '<h6 class="card-subtitle mb-2 text-muted"><b>Quick Pick:</b> Guess which answer will be correct</h6>';
+                }
                 echo '<p class="lead">' . $bet['description'] . '</p>';
     
         if (!empty($bet['closes'])) {
