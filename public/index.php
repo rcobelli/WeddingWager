@@ -23,7 +23,7 @@ $userHelper = new UserHelper($config);
 ?>
 <div class="alert alert-success" role="alert">
 <p><?php echo $_SESSION['username'] ?>, your available balance is <span class="money-amount">₡<?php echo number_format($userHelper->getBalanceForUser($_SESSION['id']), 2); ?></span></p>
-<p><i>(₡ = CobelliCoin, a fake crypto for <s>Ryan to get rich quick</s> this event)</i></p>
+<p><i>(₡ = CobelliCoin, a fake crypto <s>for Ryan to get rich quick</s> this event)</i></p>
 </div>
 <div class="alert alert-info" role="alert">
 <p>A <b>-135</b> favorite means you must risk ₡135 to gain ₡100</p>
@@ -84,7 +84,6 @@ if (count($availableBets) == 0) {
         echo '<div class="card">';
             echo '<div class="card-body pb-1">';
                 echo '<h5 class="card-title">' . $bet['title'] . '</h5>';
-                echo '<h6 class="card-subtitle mb-2 text-muted">' . $bet['type'] . '</h6>';
                 if ($bet['type'] == 'Over/Under') {
                     echo '<h6 class="card-subtitle mb-2 text-muted"><b>Over/Under:</b> Guess if the actual answer is above or below the given line</h6>';
                 } else if ($bet['type'] == 'Hit (Yes/No)') {
