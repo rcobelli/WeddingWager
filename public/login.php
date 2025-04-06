@@ -51,10 +51,10 @@ $year = date('Y');
     if (!isset($_GET['leaderboardName'])) {
         echo '<button type="submit" class="btn btn-dark mt-3" id="submitButton">Validate</button>';
     } else {
-        echo "<p>This username already exists! If this wasn't you, please <u><a href='?'>refresh</a></u> the page and try a different username.</p>";
+        echo "<div class='alert alert-warning' role='alert'><p><b>This username already exists!</b> If this wasn't you, please <u><a href='?'>refresh</a></u> the page and try a different username.</p></div>";
         echo '<input type="hidden" name="confirmed" value="true"/>';
         echo '<input type="hidden" name="test" value="false"/>';
-        echo '<button type="submit" class="btn btn-dark" id="submitButton">This Was Me</button>';
+        echo '<button type="submit" class="btn btn-dark" id="submitButton">This Was Me!</button>';
     }
     ?>
 </form>

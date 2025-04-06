@@ -30,7 +30,7 @@ $userHelper = new UserHelper($config);
 <p>A <b>+350</b> underdog means you risk only ₡100, but you gain ₡350</p>
 <hr/>
 <p><b>Over/Under:</b> Guess if the actual answer is above or below the given line</p>
-<p><b>Hit (Yes/No):</b> Guess that you think the event will happen</p>
+<p><b>Hit (Yes/No):</b> Only place this wager if you think the event will happen</p>
 <p><b>Quick Pick:</b> Guess which answer will be correct</p>
 </div>
 <a class="btn btn-warning btn-lg btn-block mb-4" href="leaderboard.php" role="button">Check Out The Leaderboard!</a>

@@ -141,7 +141,7 @@ class BetHelper extends Helper
     }
 
     public function getAllAvailableBetsForUser($user_id) {
-        return $this->query("SELECT Bets.* FROM Bets WHERE NOT EXISTS (SELECT 1 FROM Wagers WHERE Wagers.bet_id = Bets.id AND Wagers.user_id = ?) AND (closes IS NULL OR Bets.closes > NOW()) AND winner IS NULL", $user_id);
+        return $this->query("SELECT Bets.* FROM Bets WHERE NOT EXISTS (SELECT 1 FROM Wagers WHERE Wagers.bet_id = Bets.id AND Wagers.user_id = ?) AND (closes IS NULL OR Bets.closes > NOW()) AND winner IS NULL ORDER BY closes", $user_id);
     } 
 
     public function calculatePayout($odds, $amount) {
