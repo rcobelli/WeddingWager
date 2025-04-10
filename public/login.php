@@ -35,8 +35,8 @@ $year = date('Y');
 ?>
 <div>
     <h2>What is this?</h2>
-    <p>Bet on the dumbest <span class="colored-highlight">Gen-AI</span> fueled things you can think of throughout the night & see how you stack up against your felow <span class="colored-highlight">betting buffoons</span> & <span class="colored-highlight">high-stakes hooligans</span>.</p>
-    <p>Dig up those classic <span class="colored-highlight">dank Kahoot names</span> and give us something to laugh at on the leaderboard</p> 
+    <p>Bet on some fun things throughout the night & see how you stack up against your felow <span class="colored-highlight">betting buffoons</span> & <span class="colored-highlight">high-stakes hooligans</span>.</p>
+    <p>Dig up those classic nicknames and give us something to laugh at on the leaderboard</p> 
 </div>
 <hr/>
 <form method="get">
